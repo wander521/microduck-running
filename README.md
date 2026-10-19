@@ -2,7 +2,7 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-**[GitHub Pages URL](https://wander521.github.io/microduck-running/)** — initial Pages setup and deployment are pending. Play locally with the steps below.
+**[GitHub Pages](https://wander521.github.io/microduck-running/)** · [Run locally](#play-locally)
 
 A tiny island. Three robot ducks. A very wobbly race.
 
@@ -73,7 +73,7 @@ docs/                 Screenshots and validation notes
 
 ## GitHub Pages deployment
 
-The included workflow installs dependencies with Node.js 22, runs tests, and builds with `/microduck-running/` as its base path. Once **Settings → Pages → Source** is set to **GitHub Actions**, pushes to `main` can publish to [GitHub Pages](https://wander521.github.io/microduck-running/). Pull requests only test and build. You can also run **Actions → Test and deploy** manually. Initial Pages enablement and a successful hosted deployment remain unverified.
+The included workflow installs dependencies with Node.js 22, runs tests, and builds with `/microduck-running/` as its base path. Once **Settings → Pages → Source** is set to **GitHub Actions**, pushes to `main` can publish to [GitHub Pages](https://wander521.github.io/microduck-running/). Pull requests only test and build. You can also run **Actions → Test and deploy** manually.
 
 ## Models and scope
 

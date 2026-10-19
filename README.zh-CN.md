@@ -2,7 +2,7 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-**[GitHub Pages 地址](https://wander521.github.io/microduck-running/)** — 首次 Pages 配置与部署尚待完成，可按下方步骤本地试玩。
+**[GitHub Pages](https://wander521.github.io/microduck-running/)** · [本地运行](#本地运行)
 
 一座小岛，三只机器鸭，一场跌跌撞撞的比赛。
 
@@ -73,7 +73,7 @@ docs/                 游戏截图与验证说明
 
 ## GitHub Pages 部署
 
-已提供的工作流使用 Node.js 22 安装依赖、运行测试，并以 `/microduck-running/` 为基础路径构建。将仓库的 **Settings → Pages → Source** 设为 **GitHub Actions** 后，推送 `main` 即可通过工作流发布到 [GitHub Pages](https://wander521.github.io/microduck-running/)。拉取请求只进行测试与构建，不部署。也可手动运行 **Actions → Test and deploy**。首次 Pages 启用及线上部署成功尚未确认。
+已提供的工作流使用 Node.js 22 安装依赖、运行测试，并以 `/microduck-running/` 为基础路径构建。将仓库的 **Settings → Pages → Source** 设为 **GitHub Actions** 后，推送 `main` 即可通过工作流发布到 [GitHub Pages](https://wander521.github.io/microduck-running/)。拉取请求只进行测试与构建，不部署。也可手动运行 **Actions → Test and deploy**。
 
 ## 策略与适用范围
 
