@@ -1,0 +1,12 @@
+node_modules/
+dist/
+public/assets/runtime/
+evidence/
+.impeccable/
+PRODUCT.md
+DESIGN.md
+.DS_Store
+*.log
+:memory:*
+.env
+.env.*

@@ -1,0 +1,16 @@
+{
+  "id": "race-running",
+  "status": "experimental-playtest",
+  "arm": "strong",
+  "checkpoint": 13194,
+  "updates": 1000,
+  "parent": "HannesVonEssen/microduck-running checkpoint12195",
+  "parentSha256": "052f6df6683fdae83deb369b7f2c7d13e45f87ed2907adee6e23b1ebf9dfe973",
+  "checkpointSha256": "ac34a90afcbcf9d61abcd79bbbfc81bf396378ade2b2c4795182628c01247a57",
+  "policySha256": "0da6f0957ee164f4cdc0f1dcfd1e46b06acb2d6370acd057a4b94afde0545361",
+  "taskSha256": "8564a0f00998f49063c6946d1c25a4562f833be9f1df238e1d979a81527924cf",
+  "sourceRevision": "828d950134e29a8d04cbb51720a22c8729047fb7",
+  "export": "Canonical upstream exporter; observation normalizer and source action clip baked in ONNX",
+  "deployment": "Constant running throughout race. Only physical fall recovery (accepted own stand actor), forward roll and countdown/finish hold select other policies. No ordinary walk fallback. Same game3duckworld, trained actions BAMlag controller; optional game steering is boundedphysicalyawtorque0.025Nm, not root pose/velocity correction. Legacy game plant differs from source; no whole-map/random qualification claim.",
+  "qualification": "Nominal game development only; running can fall and drift. User explicitly requested a preview."
+}

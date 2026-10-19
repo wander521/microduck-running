@@ -1,0 +1,310 @@
+{
+  "id": "roulade",
+  "name": "前滚翻",
+  "subtitle": "自训策略",
+  "description": "向前翻一圈，站稳后自然收住。",
+  "source": "https://huggingface.co/tfrere/microduck-move-base-roulade",
+  "authorship": "本项目在公开模型基础上续训 · 检查点 6098",
+  "sourceNote": "翻滚由本项目续训；站稳后交回公开行走策略。已通过新随机条件测试，少数姿态仍可能失衡。",
+  "durationSeconds": 6,
+  "view": [
+    0.48,
+    0.3,
+    0.62
+  ],
+  "look": [
+    0,
+    0.12,
+    0
+  ],
+  "completion": {
+    "schema": 1,
+    "minimumSupportedRotationDegrees": 300,
+    "maximumSupportedRotationDegrees": 450,
+    "maximumTiltDegrees": 25,
+    "minimumHeightM": 0.09,
+    "maximumHeightM": 0.15,
+    "maximumAngularSpeedRadps": 2.5,
+    "stableSeconds": 0.12,
+    "physicsDt": 0.005,
+    "requiresHeadTopContactLatch": true,
+    "requiresFootContact": true,
+    "scope": "Read-only completion supervisor. Selects a learned policy on the next control boundary; never edits physical state, actions or motor history."
+  },
+  "returnPolicy": "assets/skills/roulade/return-walk.onnx",
+  "returnPolicySha256": "7dd445d744c6388b3b9b78cfcfafa512403a648c474ba4bc0ba35a6010e10552",
+  "xml": "assets/skills/roulade/scene.xml",
+  "xmlSha256": "73165ae4db7ef4cc63fee2535ea3fd11342090bbaf45f75c8b4132995732f548",
+  "task": "assets/skills/roulade/task.json",
+  "taskSha256": "202f957b7c002d776ff777f3586ddb34a719e9cd4653f85cb8f6c4346f1c5259",
+  "policy": "assets/skills/roulade/policy.onnx",
+  "policySha256": "2edae09241bb30d109033aaee1e8cec94b8fd2c127311059eaddebe17228f998",
+  "assets": [
+    {
+      "file": "assets/9a91cc1ae31ecd9e0c1ba93f3bb2ad8a12e29bff24ec27d1ac66c0c3037d9fcf.stl",
+      "url": "assets/skills/shared/9a91cc1ae31ecd9e0c1ba93f3bb2ad8a12e29bff24ec27d1ac66c0c3037d9fcf.stl",
+      "sha256": "9a91cc1ae31ecd9e0c1ba93f3bb2ad8a12e29bff24ec27d1ac66c0c3037d9fcf",
+      "upstreamSha256": "9a91cc1ae31ecd9e0c1ba93f3bb2ad8a12e29bff24ec27d1ac66c0c3037d9fcf",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/b0c9902dee19f06cdb7fa930292e0e1c91e2dc59baa971211495b58ff76c3c60.stl",
+      "url": "assets/skills/shared/b0c9902dee19f06cdb7fa930292e0e1c91e2dc59baa971211495b58ff76c3c60.stl",
+      "sha256": "b0c9902dee19f06cdb7fa930292e0e1c91e2dc59baa971211495b58ff76c3c60",
+      "upstreamSha256": "b0c9902dee19f06cdb7fa930292e0e1c91e2dc59baa971211495b58ff76c3c60",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/d0e89a173e7bdc8038c4d413f458140d8f42f1a2f098f67a887c2388eff31718.stl",
+      "url": "assets/skills/shared/d0e89a173e7bdc8038c4d413f458140d8f42f1a2f098f67a887c2388eff31718.stl",
+      "sha256": "d0e89a173e7bdc8038c4d413f458140d8f42f1a2f098f67a887c2388eff31718",
+      "upstreamSha256": "d0e89a173e7bdc8038c4d413f458140d8f42f1a2f098f67a887c2388eff31718",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/231b3e5f1e24d146d735dc158cbcfec0c95a0d0ca8c500f61f04d15d0b665652.stl",
+      "url": "assets/skills/shared/231b3e5f1e24d146d735dc158cbcfec0c95a0d0ca8c500f61f04d15d0b665652.stl",
+      "sha256": "231b3e5f1e24d146d735dc158cbcfec0c95a0d0ca8c500f61f04d15d0b665652",
+      "upstreamSha256": "231b3e5f1e24d146d735dc158cbcfec0c95a0d0ca8c500f61f04d15d0b665652",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/3c2b52b0b6e2ce944a1e1b5a0838e1216be1ad3a34c8cdf91be186e634aec57b.stl",
+      "url": "assets/skills/shared/3c2b52b0b6e2ce944a1e1b5a0838e1216be1ad3a34c8cdf91be186e634aec57b.stl",
+      "sha256": "3c2b52b0b6e2ce944a1e1b5a0838e1216be1ad3a34c8cdf91be186e634aec57b",
+      "upstreamSha256": "3c2b52b0b6e2ce944a1e1b5a0838e1216be1ad3a34c8cdf91be186e634aec57b",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/3efba3e193cc6aa49d49a9c92cdded0504917397c9e2c5b8fe002a958e2f2d2b.stl",
+      "url": "assets/skills/shared/3efba3e193cc6aa49d49a9c92cdded0504917397c9e2c5b8fe002a958e2f2d2b.stl",
+      "sha256": "3efba3e193cc6aa49d49a9c92cdded0504917397c9e2c5b8fe002a958e2f2d2b",
+      "upstreamSha256": "3efba3e193cc6aa49d49a9c92cdded0504917397c9e2c5b8fe002a958e2f2d2b",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/2d2ade4e86df4b37ce313bb9b96023109dd04bab39dba08b154e76d332fbce2e.stl",
+      "url": "assets/skills/shared/2d2ade4e86df4b37ce313bb9b96023109dd04bab39dba08b154e76d332fbce2e.stl",
+      "sha256": "2d2ade4e86df4b37ce313bb9b96023109dd04bab39dba08b154e76d332fbce2e",
+      "upstreamSha256": "2d2ade4e86df4b37ce313bb9b96023109dd04bab39dba08b154e76d332fbce2e",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/b6e86b886153be8a8a776c1cb219c074ee9e89c8bd431117662a2d9e504d7cb5.stl",
+      "url": "assets/skills/shared/b6e86b886153be8a8a776c1cb219c074ee9e89c8bd431117662a2d9e504d7cb5.stl",
+      "sha256": "b6e86b886153be8a8a776c1cb219c074ee9e89c8bd431117662a2d9e504d7cb5",
+      "upstreamSha256": "b6e86b886153be8a8a776c1cb219c074ee9e89c8bd431117662a2d9e504d7cb5",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/54f97fa1f0e0e611d31329df9f3c3b17ffcca2d695c579d1d32cbe99e8a6c7ef.stl",
+      "url": "assets/skills/shared/54f97fa1f0e0e611d31329df9f3c3b17ffcca2d695c579d1d32cbe99e8a6c7ef.stl",
+      "sha256": "54f97fa1f0e0e611d31329df9f3c3b17ffcca2d695c579d1d32cbe99e8a6c7ef",
+      "upstreamSha256": "54f97fa1f0e0e611d31329df9f3c3b17ffcca2d695c579d1d32cbe99e8a6c7ef",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/2ec1bd89205b407efebaa9a8898ad9fea741389d87b80ecc5c96b21d1668119e.stl",
+      "url": "assets/skills/shared/2ec1bd89205b407efebaa9a8898ad9fea741389d87b80ecc5c96b21d1668119e.stl",
+      "sha256": "2ec1bd89205b407efebaa9a8898ad9fea741389d87b80ecc5c96b21d1668119e",
+      "upstreamSha256": "2ec1bd89205b407efebaa9a8898ad9fea741389d87b80ecc5c96b21d1668119e",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/aa4f853ae555a8b765e585ce4519c0bbff325ce298ec15a1437792c52a0beac1.stl",
+      "url": "assets/skills/shared/aa4f853ae555a8b765e585ce4519c0bbff325ce298ec15a1437792c52a0beac1.stl",
+      "sha256": "aa4f853ae555a8b765e585ce4519c0bbff325ce298ec15a1437792c52a0beac1",
+      "upstreamSha256": "aa4f853ae555a8b765e585ce4519c0bbff325ce298ec15a1437792c52a0beac1",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/b5603a64b2d965ad75ea847767b5798130852e12a658fde7b5068fc457e2adcc.stl",
+      "url": "assets/skills/shared/b5603a64b2d965ad75ea847767b5798130852e12a658fde7b5068fc457e2adcc.stl",
+      "sha256": "b5603a64b2d965ad75ea847767b5798130852e12a658fde7b5068fc457e2adcc",
+      "upstreamSha256": "b5603a64b2d965ad75ea847767b5798130852e12a658fde7b5068fc457e2adcc",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/8cb1c12dfa6d366a318bb1ec16f585427b9a185afeb7738d0a6f41f5db46a07d.stl",
+      "url": "assets/skills/shared/8cb1c12dfa6d366a318bb1ec16f585427b9a185afeb7738d0a6f41f5db46a07d.stl",
+      "sha256": "8cb1c12dfa6d366a318bb1ec16f585427b9a185afeb7738d0a6f41f5db46a07d",
+      "upstreamSha256": "8cb1c12dfa6d366a318bb1ec16f585427b9a185afeb7738d0a6f41f5db46a07d",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/a685ce65348ae4d0d49417c69a7a8871f8bbd54a6e3419362be9c334abd5d2ae.stl",
+      "url": "assets/skills/shared/a685ce65348ae4d0d49417c69a7a8871f8bbd54a6e3419362be9c334abd5d2ae.stl",
+      "sha256": "a685ce65348ae4d0d49417c69a7a8871f8bbd54a6e3419362be9c334abd5d2ae",
+      "upstreamSha256": "a685ce65348ae4d0d49417c69a7a8871f8bbd54a6e3419362be9c334abd5d2ae",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/e1167b3d5ad7fbbe6e63296bcd0c6b61556611e6bc1367b15ecfd27e3abb72f5.stl",
+      "url": "assets/skills/shared/e1167b3d5ad7fbbe6e63296bcd0c6b61556611e6bc1367b15ecfd27e3abb72f5.stl",
+      "sha256": "e1167b3d5ad7fbbe6e63296bcd0c6b61556611e6bc1367b15ecfd27e3abb72f5",
+      "upstreamSha256": "e1167b3d5ad7fbbe6e63296bcd0c6b61556611e6bc1367b15ecfd27e3abb72f5",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/6d01f396f514c9d2185cf6b8250b1d8382ac3fa0702eb525bcb284f706196291.stl",
+      "url": "assets/skills/shared/6d01f396f514c9d2185cf6b8250b1d8382ac3fa0702eb525bcb284f706196291.stl",
+      "sha256": "6d01f396f514c9d2185cf6b8250b1d8382ac3fa0702eb525bcb284f706196291",
+      "upstreamSha256": "6d01f396f514c9d2185cf6b8250b1d8382ac3fa0702eb525bcb284f706196291",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/802cc66fc5447c67fc642d1339e55160df10f2ad04a65efd130e35fb7b2d3c90.stl",
+      "url": "assets/skills/shared/802cc66fc5447c67fc642d1339e55160df10f2ad04a65efd130e35fb7b2d3c90.stl",
+      "sha256": "802cc66fc5447c67fc642d1339e55160df10f2ad04a65efd130e35fb7b2d3c90",
+      "upstreamSha256": "802cc66fc5447c67fc642d1339e55160df10f2ad04a65efd130e35fb7b2d3c90",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/295ee68ed9766c91fe06d3a2a49d39f7c2f56cc943395d293afdeb013123435e.stl",
+      "url": "assets/skills/shared/295ee68ed9766c91fe06d3a2a49d39f7c2f56cc943395d293afdeb013123435e.stl",
+      "sha256": "295ee68ed9766c91fe06d3a2a49d39f7c2f56cc943395d293afdeb013123435e",
+      "upstreamSha256": "295ee68ed9766c91fe06d3a2a49d39f7c2f56cc943395d293afdeb013123435e",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/6c8f193ec7cb40be0f48eeb5fba81bce2c87f12e1aab3f77f1bc4981386e1495.stl",
+      "url": "assets/skills/shared/6c8f193ec7cb40be0f48eeb5fba81bce2c87f12e1aab3f77f1bc4981386e1495.stl",
+      "sha256": "6c8f193ec7cb40be0f48eeb5fba81bce2c87f12e1aab3f77f1bc4981386e1495",
+      "upstreamSha256": "6c8f193ec7cb40be0f48eeb5fba81bce2c87f12e1aab3f77f1bc4981386e1495",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/031d5ffaf6247328cf6d020f6b6695ffb3f8d3f22cf923b85811351d89ecfd7c.stl",
+      "url": "assets/skills/shared/031d5ffaf6247328cf6d020f6b6695ffb3f8d3f22cf923b85811351d89ecfd7c.stl",
+      "sha256": "031d5ffaf6247328cf6d020f6b6695ffb3f8d3f22cf923b85811351d89ecfd7c",
+      "upstreamSha256": "031d5ffaf6247328cf6d020f6b6695ffb3f8d3f22cf923b85811351d89ecfd7c",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/75a35f9bcf94cd8e52f99b3fd6ae667b48f52503f9075ee2f699eebe8e7b3ddf.stl",
+      "url": "assets/skills/shared/75a35f9bcf94cd8e52f99b3fd6ae667b48f52503f9075ee2f699eebe8e7b3ddf.stl",
+      "sha256": "75a35f9bcf94cd8e52f99b3fd6ae667b48f52503f9075ee2f699eebe8e7b3ddf",
+      "upstreamSha256": "75a35f9bcf94cd8e52f99b3fd6ae667b48f52503f9075ee2f699eebe8e7b3ddf",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/1820f7cf96646b0fc0c431f07da87b91b13111bfa9857ab1bf2b1fc3388f8da2.stl",
+      "url": "assets/skills/shared/1820f7cf96646b0fc0c431f07da87b91b13111bfa9857ab1bf2b1fc3388f8da2.stl",
+      "sha256": "1820f7cf96646b0fc0c431f07da87b91b13111bfa9857ab1bf2b1fc3388f8da2",
+      "upstreamSha256": "1820f7cf96646b0fc0c431f07da87b91b13111bfa9857ab1bf2b1fc3388f8da2",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/e175896932d76dc7648cf939aa39cb7b1d188b783d91745adb9a4cec65e9052c.stl",
+      "url": "assets/skills/shared/e175896932d76dc7648cf939aa39cb7b1d188b783d91745adb9a4cec65e9052c.stl",
+      "sha256": "e175896932d76dc7648cf939aa39cb7b1d188b783d91745adb9a4cec65e9052c",
+      "upstreamSha256": "e175896932d76dc7648cf939aa39cb7b1d188b783d91745adb9a4cec65e9052c",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/1a61582759d82b5b4df9b7d11099bf1bb3944fc77e6b74d3237adf24dd5d03d7.stl",
+      "url": "assets/skills/shared/1a61582759d82b5b4df9b7d11099bf1bb3944fc77e6b74d3237adf24dd5d03d7.stl",
+      "sha256": "1a61582759d82b5b4df9b7d11099bf1bb3944fc77e6b74d3237adf24dd5d03d7",
+      "upstreamSha256": "1a61582759d82b5b4df9b7d11099bf1bb3944fc77e6b74d3237adf24dd5d03d7",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/96238ed0d020ce0009cf1a5aa4b6926176c800840318ee65e4375be2298d2744.stl",
+      "url": "assets/skills/shared/96238ed0d020ce0009cf1a5aa4b6926176c800840318ee65e4375be2298d2744.stl",
+      "sha256": "96238ed0d020ce0009cf1a5aa4b6926176c800840318ee65e4375be2298d2744",
+      "upstreamSha256": "96238ed0d020ce0009cf1a5aa4b6926176c800840318ee65e4375be2298d2744",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/b1c717432ff7666398de58adec6a1b7e03a7e45aa155dbfe27a6152ef19663e5.stl",
+      "url": "assets/skills/shared/b1c717432ff7666398de58adec6a1b7e03a7e45aa155dbfe27a6152ef19663e5.stl",
+      "sha256": "b1c717432ff7666398de58adec6a1b7e03a7e45aa155dbfe27a6152ef19663e5",
+      "upstreamSha256": "b1c717432ff7666398de58adec6a1b7e03a7e45aa155dbfe27a6152ef19663e5",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/e815f3483a2e7b80844f3c0938a47e53db38b12faed9b2d364414c19e4322da4.stl",
+      "url": "assets/skills/shared/e815f3483a2e7b80844f3c0938a47e53db38b12faed9b2d364414c19e4322da4.stl",
+      "sha256": "e815f3483a2e7b80844f3c0938a47e53db38b12faed9b2d364414c19e4322da4",
+      "upstreamSha256": "e815f3483a2e7b80844f3c0938a47e53db38b12faed9b2d364414c19e4322da4",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/f83f388ae00787415e76b8ecaab769f08f25b8c4e90c1937ff0fc4d68d81722e.stl",
+      "url": "assets/skills/shared/f83f388ae00787415e76b8ecaab769f08f25b8c4e90c1937ff0fc4d68d81722e.stl",
+      "sha256": "f83f388ae00787415e76b8ecaab769f08f25b8c4e90c1937ff0fc4d68d81722e",
+      "upstreamSha256": "f83f388ae00787415e76b8ecaab769f08f25b8c4e90c1937ff0fc4d68d81722e",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/45cdbd319a4583095d8daa0db07dee726522a743d59acb82d27d82ded500a1cf.stl",
+      "url": "assets/skills/shared/45cdbd319a4583095d8daa0db07dee726522a743d59acb82d27d82ded500a1cf.stl",
+      "sha256": "45cdbd319a4583095d8daa0db07dee726522a743d59acb82d27d82ded500a1cf",
+      "upstreamSha256": "45cdbd319a4583095d8daa0db07dee726522a743d59acb82d27d82ded500a1cf",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/0e55a48281331b3b7b1a363d2e93b6012f37c52045b6dc922a149ca7c1b38388.stl",
+      "url": "assets/skills/shared/0e55a48281331b3b7b1a363d2e93b6012f37c52045b6dc922a149ca7c1b38388.stl",
+      "sha256": "0e55a48281331b3b7b1a363d2e93b6012f37c52045b6dc922a149ca7c1b38388",
+      "upstreamSha256": "0e55a48281331b3b7b1a363d2e93b6012f37c52045b6dc922a149ca7c1b38388",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/42ddde9d01bf5d91f88b99847017f14d97d2537ee27383c6d41dd8bf30a51134.stl",
+      "url": "assets/skills/shared/42ddde9d01bf5d91f88b99847017f14d97d2537ee27383c6d41dd8bf30a51134.stl",
+      "sha256": "42ddde9d01bf5d91f88b99847017f14d97d2537ee27383c6d41dd8bf30a51134",
+      "upstreamSha256": "42ddde9d01bf5d91f88b99847017f14d97d2537ee27383c6d41dd8bf30a51134",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/5caf996cc3e151b01f393cdc6a6a6a940c1d86179d8b7c7f5f85cf1f1ac2fb63.stl",
+      "url": "assets/skills/shared/5caf996cc3e151b01f393cdc6a6a6a940c1d86179d8b7c7f5f85cf1f1ac2fb63.stl",
+      "sha256": "5caf996cc3e151b01f393cdc6a6a6a940c1d86179d8b7c7f5f85cf1f1ac2fb63",
+      "upstreamSha256": "5caf996cc3e151b01f393cdc6a6a6a940c1d86179d8b7c7f5f85cf1f1ac2fb63",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/2abde8e2b79c9b011cdb11957c67ab4287b45d7301affd4235ab81141118e331.stl",
+      "url": "assets/skills/shared/2abde8e2b79c9b011cdb11957c67ab4287b45d7301affd4235ab81141118e331.stl",
+      "sha256": "2abde8e2b79c9b011cdb11957c67ab4287b45d7301affd4235ab81141118e331",
+      "upstreamSha256": "2abde8e2b79c9b011cdb11957c67ab4287b45d7301affd4235ab81141118e331",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/a1f5d43456d0f522bd60870153795f1e8112c1adf9b8b4373b59608d9545c044.stl",
+      "url": "assets/skills/shared/a1f5d43456d0f522bd60870153795f1e8112c1adf9b8b4373b59608d9545c044.stl",
+      "sha256": "a1f5d43456d0f522bd60870153795f1e8112c1adf9b8b4373b59608d9545c044",
+      "upstreamSha256": "a1f5d43456d0f522bd60870153795f1e8112c1adf9b8b4373b59608d9545c044",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/e028c8b09fecd4cb354d042bf7fd95a1a1bc2d524d760d62137fa8d74093fc23.stl",
+      "url": "assets/skills/shared/e028c8b09fecd4cb354d042bf7fd95a1a1bc2d524d760d62137fa8d74093fc23.stl",
+      "sha256": "e028c8b09fecd4cb354d042bf7fd95a1a1bc2d524d760d62137fa8d74093fc23",
+      "upstreamSha256": "e028c8b09fecd4cb354d042bf7fd95a1a1bc2d524d760d62137fa8d74093fc23",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/3f5068872f3add10eb967327651445bdfca635f5a8a01befa0ef05e462b72b4c.stl",
+      "url": "assets/skills/shared/3f5068872f3add10eb967327651445bdfca635f5a8a01befa0ef05e462b72b4c.stl",
+      "sha256": "3f5068872f3add10eb967327651445bdfca635f5a8a01befa0ef05e462b72b4c",
+      "upstreamSha256": "3f5068872f3add10eb967327651445bdfca635f5a8a01befa0ef05e462b72b4c",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/ee45e397d3f3422f34940a4b61156c3c11c7e8c2b240451ce5f9ddd1622a130e.stl",
+      "url": "assets/skills/shared/ee45e397d3f3422f34940a4b61156c3c11c7e8c2b240451ce5f9ddd1622a130e.stl",
+      "sha256": "ee45e397d3f3422f34940a4b61156c3c11c7e8c2b240451ce5f9ddd1622a130e",
+      "upstreamSha256": "ee45e397d3f3422f34940a4b61156c3c11c7e8c2b240451ce5f9ddd1622a130e",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    },
+    {
+      "file": "assets/ce0aa5bef82c7474512d302568c341b9769b3005e0bdb91a19c2eaaba6dad480.stl",
+      "url": "assets/skills/shared/ce0aa5bef82c7474512d302568c341b9769b3005e0bdb91a19c2eaaba6dad480.stl",
+      "sha256": "ce0aa5bef82c7474512d302568c341b9769b3005e0bdb91a19c2eaaba6dad480",
+      "upstreamSha256": "ce0aa5bef82c7474512d302568c341b9769b3005e0bdb91a19c2eaaba6dad480",
+      "origin": "https://huggingface.co/tfrere/microduck-move-base-roulade"
+    }
+  ]
+}

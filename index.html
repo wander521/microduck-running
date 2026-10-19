@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#327f94">
+  <meta name="description" content="A physics-driven island race. Sprint, tumble, crash, and get back up.">
+  <title>duck running!</title>
+</head>
+<body>
+  <main id="game" data-i18n-label="game" aria-label="duck running! Island rally" aria-busy="true">
+    <canvas id="world" tabindex="0" data-i18n-label="canvas" aria-label="Island circuit. Drag to orbit, scroll to zoom. WASD to drive, Space to start or pause, R to restart."></canvas>
+  </main>
+  <header class="topbar">
+    <div class="identity">
+      <h1>duck running<span>!</span></h1>
+      <span class="island-name" data-i18n="subtitle">Island rally</span>
+      <button id="language" class="language-switch" aria-label="切换为中文">中文</button>
+    </div>
+    <div class="race-instruments" data-i18n-label="raceProgress" aria-label="Race progress">
+      <div class="instrument"><span data-i18n="laps">Laps</span><strong id="lap">1 <small>/ 2</small></strong></div>
+      <div class="instrument"><span data-i18n="rank">Your place</span><strong id="rank">— <small>/ 3</small></strong></div>
+      <div class="clock"><span id="status" data-i18n="preparing">Getting ready</span><time id="time">00:00.0</time></div>
+    </div>
+  </header>
+  <aside class="race-note" id="race-note">
+    <h2><span data-i18n="headlineOne">Big sea breeze.</span><br><span data-i18n="headlineTwo">Little ducks. Full speed.</span></h2>
+    <p id="situation" data-i18n="situation">Two laps around the island. Fall down. Get back up.</p>
+    <div class="gate-progress"><span id="gate" data-i18n="starting">Ready to race</span><span id="progress-label">0%</span><progress id="progress" max="48" value="0" data-i18n-label="progress" aria-label="Course progress"></progress></div>
+    <p class="small-note" id="events" data-i18n="obstacles">Smash crates. Send barrels flying.</p>
+  </aside>
+  <aside class="standings" data-i18n-label="standings" aria-label="Race standings">
+    <h2><span data-i18n="racers">Island racers</span><span>3</span></h2>
+    <ol id="racer-list">
+      <li data-racer="you"><span class="place">1</span><i class="dot blue"></i><span><span data-i18n="blue">Blue</span> <small data-i18n="you">You</small></span><span class="racer-detail" data-i18n="ready">On the grid</span></li>
+      <li data-racer="orange"><span class="place">2</span><i class="dot coral"></i><span data-i18n="coral">Coral</span><span class="racer-detail" data-i18n="ready">On the grid</span></li>
+      <li data-racer="salt"><span class="place">3</span><i class="dot mint"></i><span data-i18n="mint">Mint</span><span class="racer-detail" data-i18n="ready">On the grid</span></li>
+    </ol>
+  </aside>
+  <div id="countdown" hidden aria-live="polite"></div>
+  <section class="load-note" id="loading" role="status"><strong data-i18n="loadingTitle">Bringing the ducks ashore…</strong><span id="load-message" data-i18n="loadingEngine">Preparing local physics</span><progress id="load-progress" max="1" value="0"></progress></section>
+  <section class="error-note" id="error" hidden role="alert"><h2 data-i18n="errorTitle">The ducks need another moment</h2><p id="error-message"></p><button id="retry" data-i18n="retry">Reload</button></section>
+  <section class="result" id="result" hidden aria-live="polite"><h2 id="result-title" data-i18n="podiumTitle">Island podium</h2><p id="result-caption"></p><ol id="result-list"></ol><p class="result-rule" data-i18n="rankingRule">Finishers rank by time. Unfinished racers rank by course progress.</p></section>
+  <footer class="control-dock" data-i18n-label="controls" aria-label="Race controls">
+    <div class="drive-hint"><div class="keys"><kbd>A</kbd><div><kbd>W</kbd><kbd>S</kbd></div><kbd>D</kbd></div><span data-i18n="drive">Steer / accelerate / slow</span></div>
+    <div class="skills" data-i18n-label="skills" aria-label="Duck skills">
+      <button data-drive="boost" id="boost" data-i18n-label="sprintKey" aria-label="Sprint, Shift key"><kbd>Shift</kbd><span data-i18n="sprint">Sprint</span></button>
+      <button data-drive="roll" id="roll" data-i18n-label="rollKey" aria-label="Forward roll, F key"><kbd>F</kbd><span data-i18n="roll">Forward roll</span></button>
+      <button data-drive="recover" data-i18n-label="recoverKey" aria-label="Get up, M key"><kbd>M</kbd><span data-i18n="recover">Get up</span></button>
+    </div>
+    <div class="race-options">
+      <label><input id="auto" type="checkbox" checked><span data-i18n="auto">Autopilot</span></label>
+      <button id="camera" class="quiet" aria-pressed="true" data-i18n="follow">Follow duck</button>
+      <details id="options"><summary data-i18n="settings" data-i18n-label="settingsLabel" aria-label="Settings and controls">Settings</summary>
+        <div class="settings">
+          <h2 data-i18n="settingsTitle">Race settings</h2>
+          <label><input id="assist" type="checkbox" checked><span data-i18n="assist">Track assist</span></label>
+          <p data-i18n="assistNote">Helps steer and return to the racing line. Collisions can still cause a fall.</p>
+          <dl><div><dt>Space</dt><dd data-i18n="startPause">Start / pause</dd></div><div><dt>E</dt><dd data-i18n="slow">Slow down</dd></div><div><dt>R</dt><dd data-i18n="restart">Restart race</dd></div><div><dt>C</dt><dd data-i18n="resetCamera">Restore follow camera</dd></div></dl>
+          <details><summary data-i18n="sources">Models and licenses</summary><p data-i18n="license"></p><p><span data-i18n="previewNote">A fixed island circuit with bounded physical assistance.</span> <a href="./THIRD_PARTY.html" target="_blank" rel="noopener" data-i18n="fullSources">Full credits and licenses</a></p></details>
+        </div>
+      </details>
+    </div>
+    <div class="playback"><button id="restart" class="quiet" disabled data-i18n="reset" data-i18n-label="restartKey" aria-label="Restart race, R key">Restart</button><button id="play" class="primary" disabled data-i18n="preparing">Getting ready</button></div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
