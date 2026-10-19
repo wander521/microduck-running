@@ -32,6 +32,7 @@ Use the **中文 / EN** button beside the title to switch language at any time. 
 - Real physical contacts can knock ducks over. Learned recovery gets them moving again; **M** requests recovery manually.
 - Crates break, barrels fly, and lightweight hurdles fall out of the way. Crate splinters are visual effects without collision.
 - As soon as **any duck finishes**, a full **10-second countdown** begins. At zero, the race ends and the winner dances on the podium. Finishers rank by time; unfinished ducks rank by progress and are labelled accordingly.
+- The camera follows your duck by default, including after a restart. Use the dock to switch to the island overview, or press **C** to restore following.
 - Pausing also pauses the final countdown and podium celebration.
 
 | Input | Action |
@@ -57,7 +58,7 @@ npm run build        # Standalone static output in dist/
 npm run preview      # Preview the production build
 ```
 
-Optional physical diagnostics: `npm run check:race`, `check:roll`, `check:coast`, and `check:hurdles`. They write generated reports to the ignored `evidence/` folder. See [validation notes](docs/VALIDATION.md).
+Optional physical diagnostics: `npm run check:race`, `check:roll`, `check:coast`, and `check:hurdles`. They write generated reports to the ignored `evidence/` folder. See [validation notes](docs/VALIDATION.md) and [performance measurements](docs/PERFORMANCE.md). `npm run check:performance` compares presentation extraction and worker payloads.
 
 The build copies MuJoCo and ONNX WebAssembly files from the pinned npm packages into a generated local runtime directory. Static hosting must serve `.wasm` files correctly. For a subdirectory build and its local preview, set `BASE_PATH=/microduck-running/` for both `npm run build` and `npm run preview`.
 

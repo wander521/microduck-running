@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Standalone physical island racing game \u2014 duck running!",
+  "description": "Standalone physical island racing game — duck running!",
   "scripts": {
     "dev": "node scripts/prepare-browser-runtime.mjs && vite --host 127.0.0.1 --port 5175",
     "build": "node scripts/prepare-browser-runtime.mjs && vite build",
@@ -12,7 +12,8 @@
     "check:race": "node scripts/evaluate.mjs",
     "check:roll": "node scripts/check-roll.mjs",
     "check:coast": "node scripts/check-coast.mjs",
-    "check:hurdles": "node scripts/check-hurdles.mjs"
+    "check:hurdles": "node scripts/check-hurdles.mjs",
+    "check:performance": "node scripts/benchmark-presentation.mjs"
   },
   "dependencies": {
     "@mujoco/mujoco": "3.11.0",

@@ -32,6 +32,7 @@ npm run dev
 - 鸭子、对手和障碍物使用真实物理碰撞。跌倒后使用学习策略自动起身，也可按 **M** 手动起身。
 - 木箱可破坏、路桶可弹飞，轻质跨栏撞倒后会让出道路。木箱碎片仅为视觉效果，不参与碰撞。
 - **任意一只小鸭率先冲线**后启动完整的 **10 秒倒计时**。归零后统一结束，进入领奖台，由冠军跳舞庆祝。完赛者按时间排名，未完赛者按进度排列并明确标记。
+- 默认跟随玩家小鸭，重开后同样恢复跟随。底栏可切换俯瞰海岛，按 **C** 可恢复跟随。
 - 暂停比赛时，最后十秒倒计时和颁奖动画也会暂停。
 
 | 操作 | 功能 |
@@ -57,7 +58,7 @@ npm run build        # 输出独立静态站点到 dist/
 npm run preview      # 预览生产构建
 ```
 
-可选物理诊断：`npm run check:race`、`check:roll`、`check:coast`、`check:hurdles`。生成记录写入被 Git 忽略的 `evidence/` 文件夹。参见[验证说明](docs/VALIDATION.md)。
+可选物理诊断：`npm run check:race`、`check:roll`、`check:coast`、`check:hurdles`。生成记录写入被 Git 忽略的 `evidence/` 文件夹。参见[验证说明](docs/VALIDATION.md)与[性能测量](docs/PERFORMANCE.md)。`npm run check:performance` 可对比场景展示数据提取和线程传输量。
 
 构建会从固定版本的 npm 依赖复制 MuJoCo 和 ONNX WebAssembly 到本地运行资源目录。静态服务器需正确提供 `.wasm` 文件。如需部署到子路径，构建与本地预览时均设置 `BASE_PATH=/microduck-running/`。
 

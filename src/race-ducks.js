@@ -35,13 +35,15 @@ export function createRaceDucks(scene,prototype){
     }});
     scene.add(rig.placer);return rig;
   });
+  const fromQuat=new THREE.Quaternion(),toQuat=new THREE.Quaternion(),mix=THREE.MathUtils.lerp;
   return {
-    update(state){state.racers.forEach((r,i)=>{
+    update(state,previous=state,blend=1){state.racers.forEach((r,i)=>{
+      const before=previous.racers[i];
       const rig=rigs[i],trunk=rig.bodies.get('trunk_base');
-      rig.placer.position.set(r.x,0,r.z);trunk.position.set(0,0,r.height);
-      trunk.quaternion.set(r.quat[1],r.quat[2],r.quat[3],r.quat[0]);
-      JOINT_NAMES.forEach((name,j)=>setJoint(rig,name,r.joints[j]));
-      for(const [name,value]of Object.entries(r.extraJoints||{}))setJoint(rig,name,value);
+      rig.placer.position.set(mix(before.x,r.x,blend),0,mix(before.z,r.z,blend));trunk.position.set(0,0,mix(before.height,r.height,blend));
+      fromQuat.set(before.quat[1],before.quat[2],before.quat[3],before.quat[0]);toQuat.set(r.quat[1],r.quat[2],r.quat[3],r.quat[0]);trunk.quaternion.slerpQuaternions(fromQuat,toQuat,blend);
+      JOINT_NAMES.forEach((name,j)=>setJoint(rig,name,mix(before.joints[j],r.joints[j],blend)));
+      for(const [name,value]of Object.entries(r.extraJoints||{}))setJoint(rig,name,mix(before.extraJoints?.[name]??value,value,blend));
     });},
     dispose(){rigs.forEach(rig=>{rig.placer.traverse(o=>{if(o.isMesh)o.material.dispose();});scene.remove(rig.placer);});},
   };

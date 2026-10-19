@@ -6,7 +6,8 @@ The checks cover a fixed local scene; they are not randomized robustness or hard
 
 ## Reproducible checks / 可复现检查
 
-- `npm test`: continuous course, nonintersecting edges, ordered gates, fitted coastline, start slots, M recovery, absent sea-surface floor, the first-finisher ten-second rule, and matching bilingual message contracts.
+- `npm test`: continuous course, nonintersecting edges, ordered gates, fitted coastline, start slots, M recovery, absent sea-surface floor, the first-finisher ten-second rule, matching bilingual message contracts, unchanged batched world vertices, and exact static/dynamic presentation transforms.
+- `npm run check:performance`: native read-only presentation extraction and worker pose-buffer comparison; see [performance notes](PERFORMANCE.md).
 - `npm run build`: production assets and local WebAssembly preparation.
 - `npm run check:race`: full race with no ordinary-walk fallback, physical champion dance, and reset.
 - `npm run check:roll`: learned forward roll on the shipped finite ground.

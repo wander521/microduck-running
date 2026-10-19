@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {batchStaticMeshes} from './static-batch.js';
 import {t} from './i18n.js';
 import {coastPoint} from './coast-map.js';
 import {nearestRallyPoint} from './physics/rally-map.js';
@@ -109,16 +110,14 @@ export function createRaceStage(scene) {
   for(let i=0;i<sections;i++)for(const p of[edge(i,-1),edge(i+1,-1),edge(i,1),edge(i,1),edge(i+1,-1),edge(i+1,1)])vertices.push(p.x,.003,p.z);
   const road=new THREE.BufferGeometry();road.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));road.computeVertexNormals();
   add(road,'#566971').name='race-road';
-  for(const side of[-1,1]){
+  // One contiguous draw per colour, preserving every curb triangle.
+  for(const side of[-1,1])for(let colour=0;colour<2;colour++){
     const positions=[],geometry=new THREE.BufferGeometry();
-    for(let i=0;i<sections;i++){
-      const start=positions.length/3;
+    for(let i=0;i<sections;i++)if(Math.floor(i/3)%2===colour){
       for(const p of[edge(i,side),edge(i+1,side),edge(i,side,.035),edge(i,side,.035),edge(i+1,side),edge(i+1,side,.035)])positions.push(p.x,.0095,p.z);
-      geometry.addGroup(start,6,Math.floor(i/3)%2);
     }
     geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geometry.computeVertexNormals();
-    const curb=new THREE.Mesh(geometry,['#bd4930','#fff7e7'].map(color=>new THREE.MeshStandardMaterial({color,roughness:1,side:THREE.DoubleSide})));
-    curb.name=`race-curb-${side}`;curb.receiveShadow=true;group.add(curb);
+    add(geometry,['#bd4930','#fff7e7'][colour]).name=`race-curb-${side}-${colour}`;
   }
   const signTextures=[],signLabels=[];
   for(const zone of typeof document==='undefined'?[]:RALLY_ZONES){
@@ -139,6 +138,8 @@ export function createRaceStage(scene) {
     add(new THREE.BoxGeometry(.055,.005,startWidth/18),(col+row)%2?'#fff7e7':'#203746',
       [start.x+start.tx*along-start.tz*lateral,.012,start.z+start.tz*along+start.tx*lateral],Math.atan2(-start.tz,start.tx));
   }
+  batchStaticMeshes(group,mesh=>mesh.name!=='race-road');
+  let activeGate=null;
   const gates=RACE_GATES.map(gate=>{
     const objects=[];
     for(const side of[-1,1]){
@@ -175,11 +176,12 @@ export function createRaceStage(scene) {
           piece.scale.setScalar(Math.max(0,Math.min(1,(.9-age)*4)));
         });
       });
-      gates.forEach((gate,i)=>{
+      const nextActive=state.stage==='complete'?-1:state.nextGate;
+      if(nextActive!==activeGate){gates.forEach((gate,i)=>{
         const active=i===state.nextGate&&state.stage!=='complete';
         gate.objects.forEach(object=>{object.material.color.set(active?'#bd4930':'#fff7e7');object.scale.setScalar(active?1.5:.7);});
         gate.line.material.color.set(active?'#bd4930':'#fff7e7');gate.line.visible=active;
-      });
+      });activeGate=nextActive;}
       state.racers.forEach((r,i)=>rings[i].position.set(r.x,.014,r.z));
     },
     dispose(){signTextures.forEach(texture=>texture.dispose());group.traverse(object=>{object.geometry?.dispose();for(const material of object.material?[object.material].flat():[])material.dispose();});scene.remove(group);},
